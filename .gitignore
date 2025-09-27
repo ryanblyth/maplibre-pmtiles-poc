@@ -31,3 +31,7 @@ pnpm-debug.log*
 
 # --- Keep empty dirs tracked ---
 public/tiles/.keep
+
+# --- Fonts ---
+public/assets/fonts/**
+!public/assets/fonts/.keep
