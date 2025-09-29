@@ -2,7 +2,7 @@
   "version": 8,
   "name": "US z6–15 dark (practice)",
   "glyphs": "/assets/fonts/{fontstack}/{range}.pbf",
-  "sprite": "/assets/sprites/basemap",
+  "sprite": "http://localhost:8080/assets/sprites/basemap",
   "sources": {
     "us_high": {
       "type": "vector",
@@ -204,57 +204,6 @@
       }
     },
 
-    {
-      "id": "poi-icons",
-      "type": "symbol",
-      "source": "us_high",
-      "source-layer": "poi",
-      "minzoom": 12,
-      "layout": {
-        "icon-image": [
-          "match",
-          ["coalesce", ["get","subclass"], ["get","class"]],
-          "airport", "airport",
-          "railway", "rail",
-          "train_station", "rail",
-          "bus", "bus",
-          "bus_stop", "bus",
-          "bus_station", "bus",
-          "parking", "parking",
-          "fuel", "fuel",
-          "charging_station", "charging-station",
-          "ev_charging", "charging-station",
-          "restaurant", "restaurant",
-          "fast_food", "restaurant",
-          "cafe", "cafe",
-          "bar", "bar",
-          "hotel", "lodging",
-          "lodging", "lodging",
-          "hospital", "hospital",
-          "clinic", "hospital",
-          "school", "school",
-          "university", "school",
-          "park", "park",
-          "nature_reserve", "park",
-          "museum", "museum",
-          "police", "police",
-          "restaurant"
-        ],
-        "icon-size": ["interpolate", ["linear"], ["zoom"], 12, 0.7, 16, 1.0],
-        "text-field": ["coalesce", ["get","name:en"], ["get","name"]],
-        "text-font": ["Noto Sans Regular"],
-        "text-offset": [0, 1.05],
-        "text-anchor": "top",
-        "text-optional": true,
-        "icon-allow-overlap": false
-      },
-      "paint": {
-        "icon-color": "#f59e0b",
-        "text-color": "#d6d9df",
-        "text-halo-color": "#0b0f14",
-        "text-halo-width": 1.2
-      }
-    },
 
     {
       "id": "water-label",
