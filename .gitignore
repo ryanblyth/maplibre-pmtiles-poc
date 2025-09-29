@@ -1,0 +1,37 @@
+# --- OS cruft ---
+.DS_Store
+Thumbs.db
+
+# --- Python (if you use a local server/scripts) ---
+venv/
+__pycache__/
+*.py[cod]
+.env
+
+# --- Node (you might add tooling later) ---
+node_modules/
+dist/
+build/
+.cache/
+
+# --- Big map artifacts & build workspace (never commit) ---
+data/
+public/tiles/*.pmtiles
+*.mbtiles
+*.osm.pbf
+planetiler.jar
+*.zip
+*.sqlite
+
+# --- Logs ---
+*.log
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Keep empty dirs tracked ---
+public/tiles/.keep
+
+# --- Fonts ---
+public/assets/fonts/**
+!public/assets/fonts/.keep

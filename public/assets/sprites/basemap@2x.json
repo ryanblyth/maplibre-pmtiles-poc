@@ -1,0 +1,122 @@
+{
+  "airport": {
+    "height": 36,
+    "pixelRatio": 2,
+    "width": 36,
+    "x": 0,
+    "y": 0,
+    "sdf": true
+  },
+  "bar": {
+    "height": 36,
+    "pixelRatio": 2,
+    "width": 36,
+    "x": 0,
+    "y": 36,
+    "sdf": true
+  },
+  "bus": {
+    "height": 36,
+    "pixelRatio": 2,
+    "width": 36,
+    "x": 0,
+    "y": 72,
+    "sdf": true
+  },
+  "cafe": {
+    "height": 36,
+    "pixelRatio": 2,
+    "width": 36,
+    "x": 36,
+    "y": 0,
+    "sdf": true
+  },
+  "charging-station": {
+    "height": 36,
+    "pixelRatio": 2,
+    "width": 36,
+    "x": 36,
+    "y": 36,
+    "sdf": true
+  },
+  "fuel": {
+    "height": 36,
+    "pixelRatio": 2,
+    "width": 36,
+    "x": 36,
+    "y": 72,
+    "sdf": true
+  },
+  "hospital": {
+    "height": 36,
+    "pixelRatio": 2,
+    "width": 36,
+    "x": 72,
+    "y": 0,
+    "sdf": true
+  },
+  "lodging": {
+    "height": 36,
+    "pixelRatio": 2,
+    "width": 36,
+    "x": 72,
+    "y": 36,
+    "sdf": true
+  },
+  "museum": {
+    "height": 36,
+    "pixelRatio": 2,
+    "width": 36,
+    "x": 72,
+    "y": 72,
+    "sdf": true
+  },
+  "park": {
+    "height": 36,
+    "pixelRatio": 2,
+    "width": 36,
+    "x": 108,
+    "y": 0,
+    "sdf": true
+  },
+  "parking": {
+    "height": 36,
+    "pixelRatio": 2,
+    "width": 36,
+    "x": 108,
+    "y": 36,
+    "sdf": true
+  },
+  "police": {
+    "height": 36,
+    "pixelRatio": 2,
+    "width": 36,
+    "x": 108,
+    "y": 72,
+    "sdf": true
+  },
+  "rail": {
+    "height": 36,
+    "pixelRatio": 2,
+    "width": 36,
+    "x": 144,
+    "y": 0,
+    "sdf": true
+  },
+  "restaurant": {
+    "height": 36,
+    "pixelRatio": 2,
+    "width": 36,
+    "x": 180,
+    "y": 0,
+    "sdf": true
+  },
+  "school": {
+    "height": 36,
+    "pixelRatio": 2,
+    "width": 36,
+    "x": 216,
+    "y": 0,
+    "sdf": true
+  }
+}
