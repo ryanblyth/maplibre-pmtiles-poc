@@ -6,7 +6,7 @@ maplibregl.addProtocol("pmtiles", protocol.tile);
 
 const map = new maplibregl.Map({
   container: "map",
-  style: "/styles/basemap-midieval.json",
+  style: "/styles/basemap.json",
   center: [-105.7821, 39.5501], // Denver, Colorado
   zoom: 8,     // Colorado zoom level
   hash: false  // disable hash to prevent URL overrides
