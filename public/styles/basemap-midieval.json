@@ -1,0 +1,519 @@
+{
+  "version": 8,
+  "name": "US z6–15 Mapbox Style (PMTiles, converted)",
+  "glyphs": "/assets/fonts/{fontstack}/{range}.pbf",
+  "sprite": "http://localhost:8080/assets/sprites/basemap",
+  "sources": {
+    "us_high": {
+      "type": "vector",
+      "url": "pmtiles:///tiles/us_z6-15.pmtiles",
+      "minzoom": 6,
+      "maxzoom": 15
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "hsl(40, 41%, 80%)"
+      }
+    },
+    {
+      "id": "landcover",
+      "type": "fill",
+      "source": "us_high",
+      "source-layer": "landcover",
+      "filter": ["==", ["get", "class"], "snow"],
+      "paint": {
+        "fill-color": "hsl(45, 11%, 88%)",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "landcover-wood",
+      "type": "fill", 
+      "source": "us_high",
+      "source-layer": "landcover",
+      "filter": ["==", ["get", "class"], "wood"],
+      "paint": {
+        "fill-color": "hsl(59, 19%, 65%)",
+        "fill-opacity": 0.7
+      }
+    },
+    {
+      "id": "landcover-grass",
+      "type": "fill",
+      "source": "us_high", 
+      "source-layer": "landcover",
+      "filter": ["match", ["get", "class"], ["grass", "scrub"], true, false],
+      "paint": {
+        "fill-color": "hsl(59, 19%, 70%)",
+        "fill-opacity": 0.6
+      }
+    },
+    {
+      "id": "landuse",
+      "type": "fill",
+      "source": "us_high",
+      "source-layer": "landuse",
+      "paint": {
+        "fill-color": [
+          "match",
+          ["get", "class"],
+          "park", "hsl(82, 46%, 72%)",
+          "cemetery", "hsl(82, 46%, 72%)",
+          "pitch", "hsl(100, 57%, 72%)",
+          "stadium", "hsl(100, 57%, 72%)",
+          "residential", "hsl(35, 11%, 88%)",
+          "hsl(59, 19%, 70%)"
+        ],
+        "fill-outline-color": "hsla(29, 22%, 63%, 0.09)",
+        "fill-opacity": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          4.6, 1, 6, 1
+        ]
+      }
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "us_high",
+      "source-layer": "water",
+      "paint": {
+        "fill-color": "hsl(116, 9%, 50%)"
+      }
+    },
+    {
+      "id": "waterway",
+      "type": "line",
+      "source": "us_high",
+      "source-layer": "waterway",
+      "filter": [
+        "all",
+        ["==", ["geometry-type"], "LineString"],
+        ["match", ["get", "class"], ["canal", "river"], true, false]
+      ],
+      "paint": {
+        "line-color": "hsl(116, 9%, 50%)",
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          3, 0.6, 20, 15
+        ]
+      }
+    },
+    {
+      "id": "boundary-country",
+      "type": "line",
+      "source": "us_high",
+      "source-layer": "boundary",
+      "filter": ["==", ["get", "admin_level"], 2],
+      "paint": {
+        "line-color": "hsl(230, 8%, 51%)",
+        "line-width": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          2, 0.6, 6, 1.2, 10, 2.0
+        ],
+        "line-opacity": 0.8
+      }
+    },
+    {
+      "id": "boundary-state",
+      "type": "line",
+      "source": "us_high",
+      "source-layer": "boundary", 
+      "filter": ["==", ["get", "admin_level"], 4],
+      "paint": {
+        "line-color": "hsl(230, 14%, 42%)",
+        "line-width": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          4, 0.3, 8, 0.8, 10, 1.2
+        ],
+        "line-opacity": 0.6
+      }
+    },
+    {
+      "id": "building",
+      "type": "fill",
+      "source": "us_high",
+      "source-layer": "building",
+      "minzoom": 13,
+      "paint": {
+        "fill-color": "hsl(35, 8%, 85%)",
+        "fill-outline-color": "hsl(35, 8%, 80%)",
+        "fill-opacity": 0.9
+      }
+    },
+    {
+      "id": "tunnel-casing",
+      "type": "line",
+      "source": "us_high",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", ["get", "brunnel"], "tunnel"],
+        ["match", ["get", "class"], ["motorway", "trunk", "primary", "secondary", "tertiary"], true, false]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-color": "hsl(230, 19%, 75%)",
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          6, 0.5, 20, 30
+        ],
+        "line-dasharray": [0.5, 0.25]
+      }
+    },
+    {
+      "id": "tunnel-path",
+      "type": "line",
+      "source": "us_high",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", ["get", "brunnel"], "tunnel"],
+        ["match", ["get", "class"], ["motorway", "trunk", "primary", "secondary", "tertiary"], true, false]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "hsl(0, 0%, 100%)",
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          6, 0.5, 20, 20
+        ]
+      }
+    },
+    {
+      "id": "road-casing",
+      "type": "line",
+      "source": "us_high",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["!=", ["get", "brunnel"], "tunnel"],
+        ["!=", ["get", "brunnel"], "bridge"],
+        ["match", ["get", "class"], ["motorway", "trunk", "primary", "secondary", "tertiary"], true, false]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "hsl(230, 24%, 87%)",
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          6, 0.5, 20, 18
+        ]
+      }
+    },
+    {
+      "id": "road",
+      "type": "line",
+      "source": "us_high",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["!=", ["get", "brunnel"], "tunnel"],
+        ["!=", ["get", "brunnel"], "bridge"],
+        ["match", ["get", "class"], ["motorway", "trunk", "primary", "secondary", "tertiary"], true, false]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "class"],
+          "motorway", "hsl(26, 87%, 62%)",
+          "trunk", "hsl(0, 0%, 100%)",
+          "primary", "hsl(0, 0%, 100%)",
+          "secondary", "hsl(0, 0%, 100%)",
+          "tertiary", "hsl(0, 0%, 100%)",
+          "hsl(0, 0%, 100%)"
+        ],
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          6, 0.5, 20, 12
+        ]
+      }
+    },
+    {
+      "id": "road-minor-casing",
+      "type": "line",
+      "source": "us_high",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["!=", ["get", "brunnel"], "tunnel"],
+        ["!=", ["get", "brunnel"], "bridge"],
+        ["match", ["get", "class"], ["residential", "service"], true, false]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "hsl(230, 24%, 87%)",
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          12, 0.5, 20, 10
+        ]
+      }
+    },
+    {
+      "id": "road-minor",
+      "type": "line",
+      "source": "us_high",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["!=", ["get", "brunnel"], "tunnel"],
+        ["!=", ["get", "brunnel"], "bridge"],
+        ["match", ["get", "class"], ["residential", "service"], true, false]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "hsl(0, 0%, 100%)",
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          12, 0.5, 20, 6
+        ]
+      }
+    },
+    {
+      "id": "bridge-casing",
+      "type": "line",
+      "source": "us_high",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", ["get", "brunnel"], "bridge"],
+        ["match", ["get", "class"], ["motorway", "trunk", "primary", "secondary", "tertiary"], true, false]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-color": "hsl(230, 24%, 87%)",
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          6, 0.5, 20, 18
+        ]
+      }
+    },
+    {
+      "id": "bridge",
+      "type": "line",
+      "source": "us_high",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", ["get", "brunnel"], "bridge"],
+        ["match", ["get", "class"], ["motorway", "trunk", "primary", "secondary", "tertiary"], true, false]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "class"],
+          "motorway", "hsl(26, 87%, 62%)",
+          "trunk", "hsl(0, 0%, 100%)",
+          "primary", "hsl(0, 0%, 100%)",
+          "secondary", "hsl(0, 0%, 100%)",
+          "tertiary", "hsl(0, 0%, 100%)",
+          "hsl(0, 0%, 100%)"
+        ],
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          6, 0.5, 20, 12
+        ]
+      }
+    },
+    {
+      "id": "bridge-minor-casing",
+      "type": "line",
+      "source": "us_high",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", ["get", "brunnel"], "bridge"],
+        ["match", ["get", "class"], ["residential", "service"], true, false]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter"
+      },
+      "paint": {
+        "line-color": "hsl(230, 24%, 87%)",
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          12, 0.5, 20, 10
+        ]
+      }
+    },
+    {
+      "id": "bridge-minor",
+      "type": "line",
+      "source": "us_high",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", ["get", "brunnel"], "bridge"],
+        ["match", ["get", "class"], ["residential", "service"], true, false]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "hsl(0, 0%, 100%)",
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          12, 0.5, 20, 6
+        ]
+      }
+    },
+    {
+      "id": "rail",
+      "type": "line",
+      "source": "us_high",
+      "source-layer": "transportation",
+      "filter": ["==", ["get", "class"], "rail"],
+      "paint": {
+        "line-color": "hsl(230, 8%, 51%)",
+        "line-width": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          10, 0.3, 14, 0.8
+        ]
+      }
+    },
+    {
+      "id": "water-label",
+      "type": "symbol",
+      "source": "us_high",
+      "source-layer": "water_name",
+      "layout": {
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-size": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          5, 11, 12, 16
+        ],
+        "text-font": ["Noto Sans Regular"],
+        "symbol-placement": "line"
+      },
+      "paint": {
+        "text-color": "hsl(230, 48%, 44%)",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 1.2
+      }
+    },
+    {
+      "id": "place-other",
+      "type": "symbol",
+      "source": "us_high",
+      "source-layer": "place",
+      "filter": [
+        "match",
+        ["get", "class"],
+        ["village", "hamlet", "suburb", "neighbourhood"],
+        true,
+        false
+      ],
+      "layout": {
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-size": [
+          "interpolate",
+          ["cubic-bezier", 0.85, 0.11, 0.68, 0.6],
+          ["zoom"],
+          3, 11, 8, 16
+        ],
+        "text-font": ["Noto Sans Regular"],
+        "text-transform": "uppercase",
+        "text-letter-spacing": 0.1,
+        "text-offset": [0, 0]
+      },
+      "paint": {
+        "text-color": "hsl(26, 25%, 32%)",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 1.2
+      }
+    },
+    {
+      "id": "place-city",
+      "type": "symbol",
+      "source": "us_high",
+      "source-layer": "place",
+      "filter": [
+        "match",
+        ["get", "class"],
+        ["city", "town"],
+        true,
+        false
+      ],
+      "layout": {
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-size": [
+          "interpolate",
+          ["cubic-bezier", 0.74, 0.11, 0.67, 0.84],
+          ["zoom"],
+          3, 13, 8, 18
+        ],
+        "text-font": ["Noto Sans Regular"],
+        "text-transform": "uppercase",
+        "text-letter-spacing": 0.15,
+        "text-offset": [0, 0]
+      },
+      "paint": {
+        "text-color": "hsl(26, 25%, 32%)",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 1.4
+      }
+    }
+  ]
+}
