@@ -1,14 +1,17 @@
 /* global maplibregl, pmtiles */
 
+// import * as pmtiles from "pmtiles";
+// import maplibregl from "maplibre-gl";
+
 // Register PMTiles BEFORE creating the map
 const protocol = new pmtiles.Protocol();
 maplibregl.addProtocol("pmtiles", protocol.tile);
 
 const map = new maplibregl.Map({
   container: "map",
-  style: "/styles/basemap.json",
-  center: [-105.7821, 39.5501], // Denver, Colorado
-  zoom: 8,     // Colorado zoom level
+  style: "/styles/basemap-midieval.json",
+  center: [0, 0], // World center
+  zoom: 2,     // World view
   hash: false  // disable hash to prevent URL overrides
 });
 

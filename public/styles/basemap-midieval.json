@@ -10,6 +10,12 @@
       "minzoom": 0,
       "maxzoom": 5
     },
+    "bathymetry": {
+      "type": "vector",
+      "url": "pmtiles:///tiles/ne_bathy_z0-6.pmtiles",
+      "minzoom": 0,
+      "maxzoom": 6
+    },
     "us_high": {
       "type": "vector",
       "url": "pmtiles:///tiles/us_z6-15.pmtiles",
@@ -397,6 +403,161 @@
           ["zoom"],
           0, 1, 6, 1
         ]
+      }
+    },
+    {
+      "id": "bathy-shallow-base",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_L_0",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "hsl(45, 30%, 85%)",
+        "fill-opacity": 0.3
+      }
+    },
+    {
+      "id": "bathy-200",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_K_200",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "hsl(50, 25%, 80%)",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-1000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_J_1000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "hsl(55, 20%, 75%)",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-2000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_I_2000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "hsl(60, 15%, 70%)",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-3000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_H_3000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "hsl(65, 10%, 65%)",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-4000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_G_4000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "hsl(70, 8%, 60%)",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-5000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_F_5000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "hsl(75, 6%, 55%)",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-6000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_E_6000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "hsl(80, 4%, 50%)",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-7000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_D_7000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "hsl(85, 2%, 45%)",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-8000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_C_8000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "hsl(90, 1%, 40%)",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-9000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_B_9000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "hsl(95, 0%, 35%)",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-10000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_A_10000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "hsl(100, 0%, 30%)",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "iceShelves-world",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_antarctic_ice_shelves_pol",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "hsl(112, 13%, 78%)"
       }
     },
     {

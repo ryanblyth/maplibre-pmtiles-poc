@@ -10,6 +10,12 @@
       "minzoom": 0,
       "maxzoom": 5
     },
+    "bathymetry": {
+      "type": "vector",
+      "url": "pmtiles:///tiles/ne_bathy_z0-6.pmtiles",
+      "minzoom": 0,
+      "maxzoom": 6
+    },
     "us_high": {
       "type": "vector",
       "url": "pmtiles:///tiles/us_z6-15.pmtiles",
@@ -72,6 +78,150 @@
       "minzoom": 0,
       "maxzoom": 6,
       "paint": { "fill-color": "#0a2846" }
+    },
+    {
+      "id": "bathy-shallow-base",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_L_0",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#1e3a8a",
+        "fill-opacity": 0.3
+      }
+    },
+    {
+      "id": "bathy-200",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_K_200",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#1e40af",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-1000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_J_1000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#2563eb",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-2000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_I_2000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#3b82f6",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-3000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_H_3000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#60a5fa",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-4000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_G_4000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#93c5fd",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-5000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_F_5000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#bfdbfe",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-6000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_E_6000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#dbeafe",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-7000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_D_7000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#e0f2fe",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-8000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_C_8000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#f0f9ff",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-9000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_B_9000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#f8fafc",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bathy-10000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_A_10000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#ffffff",
+        "fill-opacity": 0.8
+      }
     },
     {
       "id": "waterway-world",

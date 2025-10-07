@@ -1,0 +1,131 @@
+{
+  "version": 8,
+  "name": "Bathymetry Debug - Source Layer Discovery",
+  "glyphs": "/assets/fonts/{fontstack}/{range}.pbf",
+  "sprite": "http://localhost:8080/assets/sprites/basemap",
+  "sources": {
+    "bathymetry": {
+      "type": "vector",
+      "url": "pmtiles:///tiles/ne_bathy_z0-6.pmtiles",
+      "minzoom": 0,
+      "maxzoom": 6
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "hsl(40, 41%, 80%)"
+      }
+    },
+    {
+      "id": "debug-bathymetry-1000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_1000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#ff0000",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "debug-bathymetry-2000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_2000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#00ff00",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "debug-bathymetry-4000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_4000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#0000ff",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "debug-bathymetry-5000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_5000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#ffff00",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "debug-bathymetry-6000",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ne_10m_bathymetry_6000",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#ff00ff",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "debug-bathymetry-simple",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "bathymetry",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#00ffff",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "debug-bathymetry-depth",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "depth",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#ff8800",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "debug-bathymetry-ocean",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "ocean_depth",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#8800ff",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "debug-bathymetry-contours",
+      "type": "fill",
+      "source": "bathymetry",
+      "source-layer": "contours",
+      "minzoom": 0,
+      "maxzoom": 6,
+      "paint": {
+        "fill-color": "#0088ff",
+        "fill-opacity": 0.8
+      }
+    }
+  ]
+}
